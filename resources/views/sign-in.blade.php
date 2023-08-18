@@ -49,13 +49,13 @@
             <div class="flex mb-6">
                 <div class="ml-auto">
                     <a class="text-primary dim font-bold no-underline" href="{{ route('nova-two-factor.recover') }}">
-                        Use recover code
+                        Usar código de recuperação
                     </a>
                 </div>
             </div>
 
             <button class="w-full btn btn-default btn-primary hover:bg-primary-dark" type="submit">
-                Authenticate
+                Autenticar
             </button>
         </form>
     </div>

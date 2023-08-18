@@ -32,7 +32,7 @@
             @csrf
 
 
-            <h2 class="text-2xl text-center font-normal mb-6 text-90">Recover from 2FA</h2>
+            <h2 class="text-2xl text-center font-normal mb-6 text-90">Código de recuperação</h2>
             <svg class="block mx-auto mb-6" xmlns="http://www.w3.org/2000/svg" width="100" height="2" viewBox="0 0 100 2">
                 <path fill="#D8E3EC" d="M0 0h100v2H0z"></path>
             </svg>
@@ -42,20 +42,20 @@
             </p>
             @endif
             <div class="mb-6 ">
-                <label class="block font-bold mb-2" for="password">Recovery Code</label>
+                <label class="block font-bold mb-2" for="password">Código de recuperação</label>
                 <input class="form-control form-input form-input-bordered w-full" id="password" type="text" name="recovery_code" required>
             </div>
 
             <div class="flex mb-6">
                 <div class="ml-auto">
                     <a class="text-primary dim font-bold no-underline" href="{{ config('nova.path') }}">
-                        Use OTP code
+                        Use seu código de recuperação
                     </a>
                 </div>
             </div>
 
             <button class="w-full btn btn-default btn-primary hover:bg-primary-dark" type="submit">
-                Recover my account
+                Recuperar minha conta
             </button>
         </form>
     </div>
