@@ -4,12 +4,8 @@
     <loading-card :loading="loading" class="card" style="max-width: 600px">
       <div class="p-3" v-if="status.confirmed == 1">
         <p class="mb-4">
-          Atualize suas preferências de segurança
+          Autenticação de dois fatores está ativa.
         </p>
-        <input v-model="status.enabled" type="radio" name="status" :value="1" id="s1"> <label for="s1">Habilitado</label>
-        <input v-model="status.enabled" type="radio" name="status" :value="0" id="s2"> <label for="s2">Disabilitado</label>
-        <br>
-        <button @click="toggle" class="btn btn-default btn-primary mt-2">Atualizar configurações</button>
       </div>
 
       <div v-else class="p-3">
@@ -17,22 +13,15 @@
 
         <h3 class="p-3 my-4">Código de recuperação</h3>
 
-        <p class="p-2">
-          O código de recuperação é utilizado  ​​para acessar sua conta caso você não consiga acessar mais o aplicativo da Google, como por exemplo quando você troca de celular. Guarde-os em um lugar seguro, como por exemplo dentro do Google Drive. Não anote este código nem deixe ele armazenado em seu computador!
-        </p>
         <p class="p-2 no-print">
           <strong>
-            1) Copie seu código de recuperação antes de continuar a configuração da autenticação de dois fatores.
+            1) Baixe o aplicativo Google Authenticator no seu celular. 
           </strong>
         </p>
 
-        <div class="text-center my-2 p-3 rec-box text-red-900">
-          <h2>{{ twofa.recovery }}</h2>
-        </div>
-
         <div class="p-3">
           <p>
-            <strong>2) Digitalize este código QR usando o aplicativo Authenticator do Google para configurar e inserir sua senha única para ativar o 2FA</strong>
+            <strong>2) Digitalize este código QR usando o aplicativo Authenticator do Google para configurar e insira o código de 6 dígitos.</strong>
           </p>
           <div class="text-center">
             <img width="150" :src="twofa.google2fa_url" alt="qr_code">
