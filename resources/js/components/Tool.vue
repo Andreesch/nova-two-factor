@@ -4,12 +4,12 @@
     <loading-card :loading="loading" class="card" style="max-width: 600px">
       <div class="p-3" v-if="status.confirmed == 1">
         <p class="mb-4">
-          Update your two factor security settings
+          Atualize suas preferências de segurança
         </p>
-        <input v-model="status.enabled" type="radio" name="status" :value="1" id="s1"> <label for="s1">Enable</label>
-        <input v-model="status.enabled" type="radio" name="status" :value="0" id="s2"> <label for="s2">Disabled</label>
+        <input v-model="status.enabled" type="radio" name="status" :value="1" id="s1"> <label for="s1">Habilitado</label>
+        <input v-model="status.enabled" type="radio" name="status" :value="0" id="s2"> <label for="s2">Disabilitado</label>
         <br>
-        <button @click="toggle" class="btn btn-default btn-primary mt-2">Update settings</button>
+        <button @click="toggle" class="btn btn-default btn-primary mt-2">Atualizar configurações</button>
       </div>
 
       <div v-else class="p-3">
@@ -26,6 +26,10 @@
           </strong>
         </p>
 
+        <div class="text-center my-2 p-3 rec-box text-red-900">
+          <h2>{{ twofa.recovery }}</h2>
+        </div>
+
         <div class="p-3">
           <p>
             <strong>2) Digitalize este código QR usando o aplicativo Authenticator do Google para configurar e inserir sua senha única para ativar o 2FA</strong>
@@ -36,7 +40,7 @@
           <br>
           <input v-model="form.otp" @keyup="autoSubmit()" placeholder="Insira o código de 6 dígitos aqui" type="text"
                  class="w-full form-control form-input form-input-bordered mb-2">
-          <button @click="confirmOtp" class="btn btn-default btn-primary">Activate 2FA</button>
+          <button @click="confirmOtp" class="btn btn-default btn-primary">Ativar 2FA</button>
         </div>
 
       </div>

@@ -19,7 +19,7 @@ class TwoFactorController extends Controller
 
         if(auth()->user()->twoFa && auth()->user()->twoFa->confirmed == 1){
             return response()->json([
-                'message' => 'Already verified !'
+                'message' => '2FA Já está verificado'
             ]);
         }
 
@@ -72,13 +72,13 @@ class TwoFactorController extends Controller
             ]);
 
             return response()->json([
-                'message' => '2FA security successfully activated !'
+                'message' => '2FA ativado com sucesso'
             ]);
         }
 
         // auth fail
         return response()->json([
-            'message' => 'Invalid OTP !. Please try again'
+            'message' => 'Código de autenticação inválido'
         ],422);
     }
 
@@ -90,7 +90,7 @@ class TwoFactorController extends Controller
         ]);
 
         return response()->json([
-            'message' => $status ? '2FA feature enabled!' : '2FA feature disabled !'
+            'message' => $status ? '2FA habilitado' : '2FA desabilitado'
         ]);
     }
 
@@ -136,7 +136,7 @@ class TwoFactorController extends Controller
             return redirect()->to(config('nova.path'));
         }
 
-        return back()->withErrors(['Incorrect OTP !']);
+        return back()->withErrors(['Código de acesso inválido']);
     }
 
     public function recover(Request $request)
@@ -150,7 +150,7 @@ class TwoFactorController extends Controller
             auth()->user()->twoFa()->delete();
             return redirect()->to(config('nova.path'));
         }else{
-            return back()->withErrors(['Incorrect recovery code !']);
+            return back()->withErrors(['Código de recuperação inválido']);
         }
     }
 
