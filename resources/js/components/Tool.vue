@@ -1,6 +1,6 @@
 <template>
   <loading-view :loading="loading">
-  <heading class="mb-6">Two factor auth (Google 2FA)</heading>
+  <heading class="mb-6">Autenticação de dois fatores (Google 2FA)</heading>
     <loading-card :loading="loading" class="card" style="max-width: 600px">
       <div class="p-3" v-if="status.confirmed == 1">
         <p class="mb-4">
@@ -13,13 +13,9 @@
       </div>
 
       <div v-else class="p-3">
-        <p class="p-2">Two factor authentication (2FA) strengthens access security by requiring two methods (also
-          referred
-          to as factors) to verify your identity. Two factor authentication protects against phishing, social
-          engineering and password brute force attacks and secures your logins from attackers exploiting weak
-          or stolen credentials.</p>
+        <p class="p-2">A autenticação de dois fatores (2FA) fortalece a segurança de acesso exigindo dois métodos (também conhecidos como fatores) para verificar sua identidade. A autenticação de dois fatores protege contra phishing, engenharia social e ataques de força bruta de senha e protege seus logins de invasores que exploram credenciais fracas ou roubadas.</p>
 
-        <h3 class="p-3 my-4">Recovery codes</h3>
+        <h3 class="p-3 my-4">Código de recuperação</h3>
 
         <p class="p-2">
           Recovery codes are used to access your account in the event you cannot recive two-factor
